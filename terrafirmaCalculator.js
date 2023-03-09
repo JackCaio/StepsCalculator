@@ -1,6 +1,8 @@
 const passos = [2, 7, 13, 16, -3, -6, -9, -15];
+const pNames = ['Punch', 'Bend', 'Upset', 'Shrink', 'Light Hit', 'Medium Hit', 'Heavy Hit', 'Draw'];
 
 const calcula = (destino, pos = 0) => {
+  if(!destino) return {steps: 0, moves: {}}
   const moves = {};
   let steps = 0;
   let posicao = pos;
@@ -13,13 +15,29 @@ const calcula = (destino, pos = 0) => {
     });
     posicao += movimento;
     steps += 1;
-    if(!moves[movimento]) {
-      moves[movimento] = 1;
+    const movimentoIndex = passos.indexOf(movimento)
+    if(!moves[pNames[movimentoIndex]]) {
+      moves[pNames[movimentoIndex]] = 1;
     } else {
-      moves[movimento] += 1;
+      moves[pNames[movimentoIndex]] += 1;
     }
   }
   return {steps, moves}
 }
 
-console.log(calcula(98));
+const test = () => {
+  const stepsP = document.getElementById('steps');
+  const center = parseInt(document.getElementById('target').value);
+  const offsets = [
+    parseInt(document.getElementById('move1').value),
+    parseInt(document.getElementById('move2').value),
+    parseInt(document.getElementById('move3').value),
+  ]
+  const offset = offsets.reduce((acc, cur) => cur + acc, 0);
+  const target = center + offset;
+  const result = calcula(target);
+  stepsP.innerHTML = result.steps
+  console.log(result.moves);
+}
+
+// console.log(calcula(98));

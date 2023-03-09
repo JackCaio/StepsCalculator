@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anvil Calculator</title>
+</head>
+<body>
+  <ul>
+    <li>Punch: +2</li>
+    <li>Bend: +7</li>
+    <li>Upset: +13</li>
+    <li>Shrink: +16</li>
+    <li>Light Hit: -3</li>
+    <li>Medium Hit: -6</li>
+    <li>Heavy Hit: -9</li>
+    <li>Draw: -15</li>
+  </ul>
+
+  <label for="target">
+    Target:
+    <input name="target" id="target" type="text" value="0">
+  </label>
+
+  <select name="move1" id="move1">
+    <option value="0" selected>-</option>
+    <option value="2">Punch</option>
+    <option value="7">Bend</option>
+    <option value="13">Upset</option>
+    <option value="16">Shrink</option>
+    <option value="-3">Light Hit</option>
+    <option value="-6">Medium Hit</option>
+    <option value="-9">Hard Hit</option>
+    <option value="-15">Draw</option>
+  </select>
+
+  <select name="move2" id="move2">
+    <option value="0" selected>-</option>
+    <option value="2">Punch</option>
+    <option value="7">Bend</option>
+    <option value="13">Upset</option>
+    <option value="16">Shrink</option>
+    <option value="-3">Light Hit</option>
+    <option value="-6">Medium Hit</option>
+    <option value="-9">Hard Hit</option>
+    <option value="-15">Draw</option>
+  </select>
+
+  <select name="move3" id="move3">
+    <option value="0" selected>-</option>
+    <option value="2">Punch</option>
+    <option value="7">Bend</option>
+    <option value="13">Upset</option>
+    <option value="16">Shrink</option>
+    <option value="-3">Light Hit</option>
+    <option value="-6">Medium Hit</option>
+    <option value="-9">Hard Hit</option>
+    <option value="-15">Draw</option>
+  </select>
+
+  <button onclick="test()">Calculate</button>
+
+  <p>Steps: <span id="steps">0</span></p>
+
+  <script src="./terrafirmaCalculator.js"></script>
+</body>
+</html>

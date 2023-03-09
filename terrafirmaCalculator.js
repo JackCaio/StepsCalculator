@@ -25,6 +25,16 @@ const calcula = (destino, pos = 0) => {
   return {steps, moves}
 }
 
+const createMoveList = (valArr) => {
+  const moveList = document.getElementById('moveList');
+  moveList.innerHTML = '';
+  valArr.forEach(value => {
+    const li = document.createElement('li');
+    li.innerHTML = `${value[0]}: ${value[1]}x`;
+    moveList.appendChild(li);
+  });
+}
+
 const test = () => {
   const stepsP = document.getElementById('steps');
   const center = parseInt(document.getElementById('target').value);
@@ -37,7 +47,8 @@ const test = () => {
   const target = center + offset;
   const result = calcula(target);
   stepsP.innerHTML = result.steps
-  console.log(result.moves);
+  const movesArr = Object.entries(result.moves);
+  createMoveList(movesArr);
 }
 
 // console.log(calcula(98));

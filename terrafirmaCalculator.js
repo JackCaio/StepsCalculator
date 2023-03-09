@@ -42,7 +42,7 @@ const test = () => {
     parseInt(document.getElementById('move1').value),
     parseInt(document.getElementById('move2').value),
     parseInt(document.getElementById('move3').value),
-  ]
+  ];
   const offset = offsets.reduce((acc, cur) => cur + acc, 0);
   const target = center + offset;
   const result = calcula(target);
@@ -50,5 +50,3 @@ const test = () => {
   const movesArr = Object.entries(result.moves);
   createMoveList(movesArr);
 }
-
-// console.log(calcula(98));

@@ -5,22 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anvil Calculator</title>
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-  <ul>
-    <li>Punch: +2</li>
-    <li>Bend: +7</li>
-    <li>Upset: +13</li>
-    <li>Shrink: +16</li>
-    <li>Light Hit: -3</li>
-    <li>Medium Hit: -6</li>
-    <li>Heavy Hit: -9</li>
-    <li>Draw: -15</li>
+  <ul class="valueSheet">
+    <li class="positive">Punch: +2</li>
+    <li class="negative">Light Hit: -3</li>
+    <li class="positive">Bend: +7</li>
+    <li class="negative">Medium Hit: -6</li>
+    <li class="positive">Upset: +13</li>
+    <li class="negative">Heavy Hit: -9</li>
+    <li class="positive">Shrink: +16</li>
+    <li class="negative">Draw: -15</li>
   </ul>
 
   <label for="target">
     Target:
-    <input name="target" id="target" type="text" value="0">
+    <input name="target" id="target" type="number" value="0">
   </label>
 
   <select name="move1" id="move1">
@@ -59,7 +61,7 @@
     <option value="-15">Draw</option>
   </select>
 
-  <button onclick="test()">Calculate</button>
+    <button onclick="test()">Calculate</button>
 
   <p>Steps: <span id="steps">0</span></p>
   <p>Moves:</p>

@@ -37,11 +37,11 @@ const createMoveList = (valArr) => {
 
 const test = () => {
   const stepsP = document.getElementById('steps');
-  const center = parseInt(document.getElementById('target').value);
+  const center = Number(document.getElementById('target').value);
   const offsets = [
-    parseInt(document.getElementById('move1').value),
-    parseInt(document.getElementById('move2').value),
-    parseInt(document.getElementById('move3').value),
+    Number(document.getElementById('move1').value),
+    Number(document.getElementById('move2').value),
+    Number(document.getElementById('move3').value),
   ];
   const offset = offsets.reduce((acc, cur) => cur + acc, 0);
   const target = center + offset;

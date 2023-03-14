@@ -44,7 +44,7 @@ const test = () => {
     Number(document.getElementById('move3').value),
   ];
   const offset = offsets.reduce((acc, cur) => cur + acc, 0);
-  const target = center + offset;
+  const target = center + (offset * -1);
   const result = calcula(target);
   stepsP.innerHTML = result.steps
   const movesArr = Object.entries(result.moves);
